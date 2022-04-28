@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 15px;
+            width: 350px;
+            height: 550px;
+            margin-top: 30px;
+            padding: 0px 30px 30px 30px;
+        }
+        h3{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        input{
+          margin-bottom: 30px;
+          width: 95%;
+          height: 40px;
+          margin-top: 10px;
+          border-radius: 10px;
+          border: 0.5px solid gray;
+        }
+        #terms{
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        #btn{
+            width: 95%;
+            height: 40px;
+            border-radius: 10px;
+            color: blue;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        #btn:hover{
+            color: #FFF;
+            background-color: green;
+        } 
+        .flex{
+            text-align: center;
+            color: gray;
+        }
+        .sin{
+            text-align: center;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    <h3>Sign Up</h3>
+    <label>Full name</label>
+    <br>
+    <input type="text" placeholder="Enter your full Name" value="" id="nam"/>
+    <br>
+    <label>Email</label>
+    <br>
+    <input type="email" placeholder="Enter email" value="" id="eml"/>
+    <br>
+    <label>Password</label>
+    <br>
+    <input type="password" placeholder="password" id="pasw" value=""/>
+    <div id="terms">By signing up, I accept the Masai School
+         <span class="text"><a rel="noreferrer" target="_blank" href="https://masaischool.com/terms">Terms of Service</a></span>
+         and acknowledge the
+         <span class="text"><a rel="noreferrer" target="_blank" href="https://masaischool.com/privacy">Privacy Policy</a></span>.
+        </div>
+        <button type="submit" id="btn">SIGN UP</button>
+        <div class="flex">Already have an account?<a class="sin" href="C:\Users\arya\Documents\web_18.html\local storsge\login page\login.html">Sign In</a></div>
+
+</div>
+</body>
+</html>
+<script>
+
+var buttons = document.querySelector("#btn").addEventListener("click",myfunction)
+var arrOfInfo = JSON.parse(localStorage.getItem("LoginData")) || [];
+
+function myfunction(){
+    event.preventDefault()
+    var obj={
+        fullName : document.querySelector("#nam").value,
+        EmailID : document.querySelector("#eml").value,
+        PassWorD : document.querySelector("#pasw").value
+    };
+    arrOfInfo.push(obj);  
+    localStorage.setItem("LoginData",JSON.stringify(arrOfInfo));
+    window.location.href = "login.html"
+}
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+

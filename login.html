@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 15px;
+            width: 350px;
+            height: 550px;
+            margin-top: 30px;
+            padding: 0px 30px 30px 30px;
+        }
+        h3{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        input{
+          margin-bottom: 30px;
+          width: 95%;
+          height: 40px;
+          margin-top: 10px;
+          border-radius: 10px;
+          border: 0.5px solid gray;
+        }
+        #terms{
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        #btn{
+            width: 95%;
+            height: 40px;
+            border-radius: 10px;
+            color: blue;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        #btn:hover{
+            color: #FFF;
+            background-color: green;
+        } 
+        .flex{
+            text-align: center;
+            color: gray;
+        }
+        .sin{
+            text-align: center;
+            color: blue;
+        }
+        #lab{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #ok{
+            margin: auto;
+            cursor: pointer;
+            background-color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border: 0px;
+            width: 200px;
+            height: 50px
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    <h3>login</h3>
+    <br>
+    <label>Email</label>
+    <br>
+    <input type="email" placeholder="Enter email" value="" id="eml"/>
+    <br>
+    <div id="lab"><label>Password</label> <a href="https://sso.masaischool.com/forgot-password/">forgot PassWord</a></div> 
+    <br>
+    <input type="password" placeholder="password" id="pasw" value=""/>
+    <button type="submit" id="btn">LOG IN</button>
+     <button id="ok">
+         <img  id="" src="https://sso.masaischool.com/google.svg"/>
+         <a href="https://accounts.google.com/o/oauth2/v2/auth/identifier?response_type=code&redirect_uri=https%3A%2F%2Fapi.sso.masaischool.com%2Fgoogle-signin%2Fcallback&scope=email%20profile&client_id=96742475663-djleq512t0bdbsi94jdfhn0qqkvflmsp.apps.googleusercontent.com&flowName=GeneralOAuthFlow">LOGIN WITH GOOGLE</a>
+     </button>    
+    <div class="flex">Already have an account?<a class="sin" href="C:\Users\arya\Documents\web_18.html\local storsge\login page\signup.html">Sign Up</a></div>
+
+</div>
+</body>
+</html>
+<script>
+     var data = JSON.parse(localStorage.getItem("LoginData")) || []  
+     document.querySelector("#btn").addEventListener("click",myfunction)
+       
+      function myfunction(data){
+          
+         var emailIdd = document.querySelector("#eml").value;
+         var pass = document.querySelector("#pasw").value;
+        for(var i=0; i<data.length; i++){
+            if(emailIdd==data[i].EmailId && pass==data[i].PassWorD){
+                window.location.href ="sucsees.html";
+                console.log("succ")
+            }
+            else{
+                console.log("input is wrong")
+            }
+        }
+     }
+     
+</script>
+
+
+
+
+
+
+
+
+
+
+
